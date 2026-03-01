@@ -4510,4 +4510,18 @@ export const svgs: iSVG[] = [
     brandUrl: "https://www.manus.ai/brand",
     url: "https://www.manus.ai/",
   },
+  {
+    title: "Glide",
+    category: ["AI", "Software"],
+    route: {
+      light: "/library/glide_light.svg",
+      dark: "/library/glide_dark.svg",
+    },
+    wordmark: {
+      light: "/library/glide_light_wordmark.svg",
+      dark: "/library/glide_dark_wordmark.svg",
+    },
+    brandUrl: "https://brand.glide.page/dl/brand-assets",
+    url: "https://www.glideapps.com/",
+  },
 ];
