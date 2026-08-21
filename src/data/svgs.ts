@@ -2,6 +2,13 @@ import type { iSVG } from "@/types/svg";
 
 export const svgs: iSVG[] = [
   {
+    title: 'Ossium',
+    category: 'Software',
+    route: '/library/ossium_logo.svg',
+    url: 'https://ossium.in/',
+    brandUrl: 'https://ossium.in/brand',
+  },
+  {
     title: "Plausible Analytics",
     category: "Analytics",
     route: "/library/plausible.svg",
