@@ -4000,7 +4000,14 @@ export const svgs: iSVG[] = [
   {
     title: "TanStack",
     category: ["Software", "Library"],
-    route: "/library/tanstack.svg",
+    route: {
+      light: "/library/tanstack_light.svg",
+      dark: "/library/tanstack_dark.svg",
+    },
+    wordmark: {
+      light: "/library/tanstack_wordmark_light.svg",
+      dark: "/library/tanstack_wordmark_dark.svg",
+    },
     url: "https://tanstack.com/",
   },
   {
