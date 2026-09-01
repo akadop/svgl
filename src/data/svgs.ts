@@ -2,6 +2,20 @@ import type { iSVG } from "@/types/svg";
 
 export const svgs: iSVG[] = [
   {
+    title: "Depot",
+    category: ["Devtool", "Software", "Platform"],
+    route: {
+      light: "/library/depot-light.svg",
+      dark: "/library/depot-dark.svg",
+    },
+    wordmark: {
+      light: "/library/depot-wordmark-light.svg",
+      dark: "/library/depot-wordmark-dark.svg",
+    },
+    url: "https://depot.dev/",
+    brandUrl: "https://depot.dev/about/brand-assets",
+  },
+  {
     title: 'Ossium',
     category: 'Software',
     route: '/library/ossium_logo.svg',
