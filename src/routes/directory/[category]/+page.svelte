@@ -20,8 +20,6 @@
   import SearchXIcon from "@lucide/svelte/icons/search-x";
   import FolderIcon from "@lucide/svelte/icons/folder-open";
   import ArrowLeftIcon from "@lucide/svelte/icons/arrow-left";
-  import ChevronDownIcon from "@lucide/svelte/icons/chevron-down";
-  import ChevronUpIcon from "@lucide/svelte/icons/chevron-up";
 
   // SSR Data:
   let { data }: PageProps = $props();
@@ -61,18 +59,6 @@
     searchOverride = "";
     maxDisplay = INITIAL_DISPLAY;
     deleteParam("search");
-  };
-
-  const handleShowMore = () => {
-    maxDisplay += INCREMENT;
-  };
-
-  const handleShowLess = () => {
-    maxDisplay = INITIAL_DISPLAY;
-  };
-
-  const handleShowAll = () => {
-    maxDisplay = filteredSvgs.length;
   };
 
   $effect(() => {
@@ -151,17 +137,6 @@
           maxDisplay = INITIAL_DISPLAY;
         }}
       />
-      {#if filteredSvgs.length > maxDisplay}
-        <Button variant="ghost" class="px-2.5" onclick={handleShowAll}>
-          <span>Show All</span>
-        </Button>
-      {/if}
-      {#if maxDisplay > INITIAL_DISPLAY && filteredSvgs.length > INITIAL_DISPLAY}
-        <Button variant="ghost" class="px-2.5" onclick={handleShowLess}>
-          <span>Show Less</span>
-          <ChevronUpIcon size={16} strokeWidth={2} />
-        </Button>
-      {/if}
     </div>
   </PageHeader>
   <Container className="my-6">
@@ -171,22 +146,6 @@
       {/each}
     </Grid>
     <div bind:this={sentinel} class="h-1"></div>
-    {#if filteredSvgs.length > maxDisplay}
-      <div class="mt-6 flex justify-center">
-        <Button
-          variant="outline"
-          size="lg"
-          class="px-2.5"
-          onclick={handleShowMore}
-        >
-          <span>Show More</span>
-          <span class="text-neutral-600 dark:text-neutral-400">
-            (+ {Math.min(INCREMENT, filteredSvgs.length - maxDisplay)} SVGs)
-          </span>
-          <ChevronDownIcon size={16} strokeWidth={2} />
-        </Button>
-      </div>
-    {/if}
     {#if filteredSvgs.length === 0}
       <SvgNotFound svgTitle={searchTerm} category={data.category} />
     {/if}

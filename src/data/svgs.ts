@@ -2,20 +2,6 @@ import type { iSVG } from "@/types/svg";
 
 export const svgs: iSVG[] = [
   {
-    title: "Depot",
-    category: ["Devtool", "Software", "Platform"],
-    route: {
-      light: "/library/depot-light.svg",
-      dark: "/library/depot-dark.svg",
-    },
-    wordmark: {
-      light: "/library/depot-wordmark-light.svg",
-      dark: "/library/depot-wordmark-dark.svg",
-    },
-    url: "https://depot.dev/",
-    brandUrl: "https://depot.dev/about/brand-assets",
-  },
-  {
     title: 'Ossium',
     category: 'Software',
     route: '/library/ossium_logo.svg',
@@ -4012,19 +3998,6 @@ export const svgs: iSVG[] = [
     url: "https://www.lottielab.com/",
   },
   {
-    title: "TanStack",
-    category: ["Software", "Library"],
-    route: {
-      light: "/library/tanstack_light.svg",
-      dark: "/library/tanstack_dark.svg",
-    },
-    wordmark: {
-      light: "/library/tanstack_wordmark_light.svg",
-      dark: "/library/tanstack_wordmark_dark.svg",
-    },
-    url: "https://tanstack.com/",
-  },
-  {
     title: "TypeGPU",
     category: ["Software", "Library"],
     route: {
@@ -5157,5 +5130,32 @@ export const svgs: iSVG[] = [
     },
     url: "https://grida.co",
     brandUrl: "https://grida.co/brand",
+  },
+  {
+    title: "Depot",
+    category: ["Devtool", "Software", "Platform"],
+    route: {
+      light: "/library/depot-light.svg",
+      dark: "/library/depot-dark.svg",
+    },
+    wordmark: {
+      light: "/library/depot-wordmark-light.svg",
+      dark: "/library/depot-wordmark-dark.svg",
+    },
+    url: "https://depot.dev/",
+    brandUrl: "https://depot.dev/about/brand-assets",
+  },
+  {
+    title: "TanStack",
+    category: ["Software", "Library"],
+    route: {
+      light: "/library/tanstack_light.svg",
+      dark: "/library/tanstack_dark.svg",
+    },
+    wordmark: {
+      light: "/library/tanstack_wordmark_light.svg",
+      dark: "/library/tanstack_wordmark_dark.svg",
+    },
+    url: "https://tanstack.com/",
   },
 ];
