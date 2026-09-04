@@ -4,6 +4,7 @@
   import { cn } from "@/utils/cn";
   import { deleteParam } from "@/utils/searchParams";
   import { searchSvgsWithFuse } from "@/utils/searchWithFuse";
+  import { getScrollParent } from "@/utils/getScrollParent";
 
   // Components:
   import Grid from "@/components/grid.svelte";
@@ -32,6 +33,7 @@
   let maxDisplay = $state<number>(INITIAL_DISPLAY);
   let sortOverride = $state<boolean | null>(null);
   let searchOverride = $state<string | null>(null);
+  let sentinel = $state<HTMLDivElement | null>(null);
 
   const isSorted = $derived(sortOverride !== null ? sortOverride : data.sorted);
   const searchTerm = $derived(
@@ -72,6 +74,21 @@
   const handleShowAll = () => {
     maxDisplay = filteredSvgs.length;
   };
+
+  $effect(() => {
+    if (!sentinel) return;
+    const root = getScrollParent(sentinel.parentElement);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && maxDisplay < filteredSvgs.length) {
+          maxDisplay += INCREMENT;
+        }
+      },
+      { root, rootMargin: "200px" },
+    );
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  });
 </script>
 
 <svelte:head>
@@ -153,6 +170,7 @@
         <SvgCard svgInfo={svg} />
       {/each}
     </Grid>
+    <div bind:this={sentinel} class="h-1"></div>
     {#if filteredSvgs.length > maxDisplay}
       <div class="mt-6 flex justify-center">
         <Button
