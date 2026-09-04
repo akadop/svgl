@@ -5158,4 +5158,17 @@ export const svgs: iSVG[] = [
     },
     url: "https://tanstack.com/",
   },
+  {
+    title: "Mastra",
+    category: ["AI", "Framework"],
+    route: {
+      light: "/library/mastra-icon-light.svg",
+      dark: "/library/mastra-icon-dark.svg",
+    },
+    wordmark: {
+      light: "/library/mastra-wordmark-light.svg",
+      dark: "/library/mastra-wordmark-dark.svg",
+    },
+    url: "https://mastra.ai/",
+  },
 ];
